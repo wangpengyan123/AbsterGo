@@ -62,7 +62,7 @@
 	<!-- 指定spring相关文件的位置 ,classpath:spring-tasks.xml -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring.xml,classpath:spring-ehcache.xml;classpath:spring-quartz.xml</param-value>
+		<param-value>classpath:spring.xml,classpath:spring-ehcache.xml,classpath:spring-quartz.xml</param-value>
 	</context-param>
 	<!-- 配置spring mvc mapping -->
 	<servlet-mapping>
