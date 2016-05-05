@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.AbsterGo</groupId>
-  <artifactId>AbsterGo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>AbsterGo</name>
-  	<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.AbsterGo</groupId>
+	<artifactId>AbsterGo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>AbsterGo</name>
+	<properties>
 
 		<spring>3.2.4.RELEASE</spring>
 		<json>2.2.2</json>
@@ -19,9 +20,9 @@
 		<cxf.version>2.7.8</cxf.version>
 		<gson.version>2.2.4</gson.version>
 	</properties>
-  
-  
-  <dependencies>
+
+
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -154,7 +155,7 @@
 			<artifactId>ehcache-web</artifactId>
 			<version>2.0.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
@@ -277,7 +278,7 @@
 			<version>2.3.20</version>
 		</dependency>
 		<!-- poi -->
- 		<dependency>
+		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.13</version>
@@ -309,20 +310,29 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
-		<dependency>  
-            <groupId>com.alibaba</groupId>  
-            <artifactId>dubbo</artifactId>  
-            <version>2.5.3</version>  
-            <exclusions>  
-                <exclusion>  
-                    <artifactId>spring</artifactId>  
-                    <groupId>org.springframework</groupId>  
-                </exclusion>  
-            </exclusions>  
-        </dependency>
 
-      
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>1.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
@@ -334,12 +344,12 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.1</version>
 		</dependency>
-	
+
 	</dependencies>
-	
+
 	<build>
-	
-	<defaultGoal>compile</defaultGoal>
+
+		<defaultGoal>compile</defaultGoal>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -380,12 +390,12 @@
 			</resource>
 		</resources>
 	</build>
-  
-  <modules>
-    <module>AbsterGo-api</module>
-    <module>AbsterGo-controller</module>
-    <module>AbsterGo-dao</module>
-    <module>AbsterGo-service</module>
-    <module>AbsterGo-model</module>
-  </modules>
+
+	<modules>
+		<module>AbsterGo-api</module>
+		<module>AbsterGo-controller</module>
+		<module>AbsterGo-dao</module>
+		<module>AbsterGo-service</module>
+		<module>AbsterGo-model</module>
+	</modules>
 </project>
