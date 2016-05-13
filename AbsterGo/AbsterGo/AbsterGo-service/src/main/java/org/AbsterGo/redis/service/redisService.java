@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.alibaba.fastjson.JSON;
+
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisShardInfo;
@@ -16,7 +18,8 @@ public interface redisService {
 
 	String setObject(String key, Object value);
 	
-	Object getObject(String key);
+	JSON getListOfObject(String key);
+	JSON getObject(String key);
 	
 	
 	void disconnect();

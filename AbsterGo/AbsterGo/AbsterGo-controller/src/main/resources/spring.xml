@@ -18,8 +18,8 @@
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
- 
-             
+
+
 
 	<context:annotation-config />
 	<context:component-scan base-package="org.AbsterGo.*">
@@ -40,6 +40,9 @@
 			</list>
 		</property>
 	</bean>
+
+
+	<!-- 主数据源 -->
 	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<property name="url" value="${jdbc_url}" />
@@ -73,6 +76,10 @@
 		<!-- <property name="filters" value="mergeStat" /> -->
 		<property name="filters" value="stat" />
 	</bean>
+
+
+
+
 	<bean id="mobSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations">
@@ -84,7 +91,7 @@
 
 	<bean name="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="dataSource" ref="dataSource" />
 		<qualifier value="isap" />
 	</bean>
 
@@ -98,5 +105,7 @@
 	</bean>
 
 
-
+	<bean id="userService" class="org.AbsterGo.service.Impl.userServiceImpl">
+	</bean>
+	<import resource="classpath:spring-redis.xml" />
 </beans>
